@@ -1,0 +1,7 @@
+exporter_host: 0.0.0.0
+exporter_port: 9127
+
+pgbouncers:
+  - dsn: "postgres://postgres:zRqdRIzBZCDEpmSEJSDyCjCijGIqGmus@mainline.proxy.rlwy.net:30214/railway?sslmode=disable"
+    labels:
+      instance: "front"
