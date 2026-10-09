@@ -2,6 +2,8 @@ exporter_host: 0.0.0.0
 exporter_port: 9127
 
 pgbouncers:
-  - dsn: "postgres://postgres:zRqdRIzBZCDEpmSEJSDyCjCijGIqGmus@mainline.proxy.rlwy.net:30214/pgbouncer?sslmode=disable"
+  # Set PGBOUNCER_DSN in the service environment (Railway Variables), e.g.
+  # postgres://<user>:<password>@<private-host>:<port>/pgbouncer?sslmode=disable
+  - dsn: "$(PGBOUNCER_DSN)"
     labels:
       instance: "front"
