@@ -2,8 +2,9 @@ exporter_host: 0.0.0.0
 exporter_port: 9127
 
 pgbouncers:
+  # Keep the value unquoted: the image only expands $(VAR) in plain YAML scalars.
   # Set PGBOUNCER_DSN in the service environment (Railway Variables), e.g.
   # postgres://<user>:<password>@<private-host>:<port>/pgbouncer?sslmode=disable
-  - dsn: "$(PGBOUNCER_DSN)"
+  - dsn: $(PGBOUNCER_DSN)
     labels:
       instance: "front"
